@@ -1,5 +1,5 @@
 <form action="" method="post" enctype="multipart/form-data">
-    <h1>Creador de medicamentos</h1>
+    <h1>Creador de pacientes</h1>
     <br>
 
     <div>
@@ -8,22 +8,32 @@
     <br>
 
     <div>
-        <h4>Laoratorio: <input type="laboratorio"></h4>
+        <h4>Apellido paterno: <input type="apellidoP"></h4>
     </div>
     <br>
 
     <div>
-        <h4>Lote: <input type="lote"></h4>
+        <h4>Apellido materno: <input type="apellidoM"></h4>
     </div>
     <br>
 
     <div>
-        <h4>Fecha elavoracion: <input type="date"></h4>
+        <h4>Fecha naciemiento: <input type="date"></h4>
     </div>
     <br>
 
     <div>
-    <h4>Fecha expiracion: <input type="date"></h4>
+        <h4>Direccion: <input type="direccion"></h4>
+    </div>
+    <br>
+
+    <div>
+        <h4>Número telefonico: <input type="numeroT"></h4>
+    </div>
+    <br>
+
+    <div>
+        <h4>Genero: <input type="genero"></h4>
     </div>
     <br>
 

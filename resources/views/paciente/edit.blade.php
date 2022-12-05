@@ -1,5 +1,5 @@
 <form action="" method="post" enctype="multipart/form-data">
-    <h1>Editor de medicamentos</h1>
+    <h1>Editor de pacientes</h1>
     <br>
 
     <div>

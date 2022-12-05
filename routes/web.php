@@ -1,4 +1,8 @@
 <?php
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PacienteController;
+use App\Http\Controllers\BodegaController;
+use App\Http\Controllers\MedicamentoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,3 +18,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+/*Route::get('/bodega', function () {
+    return view('bodega.create');
+});
+
+Route::get('/paciente/create',[PacienteController::class,'create']);*/
+
+Route::resource('paciente','PacienteController');
+
+Route::resource('bodega','BodegaController');//ruta general para todas las funciones de la clase controller
+
+Route::resource('medicamento','MedicamentoController');

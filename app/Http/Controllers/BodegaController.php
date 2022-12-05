@@ -3,7 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Bodega;
+use CreateBodegasTable;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect as FacadesRedirect;
+
 
 class BodegaController extends Controller
 {
@@ -14,7 +19,10 @@ class BodegaController extends Controller
      */
     public function index()
     {
-        //
+        $bodegas = DB::select('select * from bodegas where id  = :id',['id' => 1]);
+        // $users = DB::select('select * from users where active = ?', [1]);
+        return view('bodega.create', ['bodegas' => $bodegas]);
+        //return view('user.index', ['users' => $users]);
     }
 
     /**
@@ -24,7 +32,8 @@ class BodegaController extends Controller
      */
     public function create()
     {
-        //
+        DB::insert('insert into bodegas(nombre, cantidad_medicamentos) values (?,?)')
+        //DB::insert('insert into users (id, name) values (?, ?)', [1, 'Dayle']);
     }
 
     /**
@@ -35,7 +44,11 @@ class BodegaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $bodegas = new Bodega();
+        $bodegas->nombre = $request->nombre;
+        $bodegas->cantidad_medicamentos = $request->cantidad_medicamentos;
+        $bodegas->save();
+        return redirect('bodega')->with('message', 'Guardado Satisfactoriamente !');
     }
 
     /**
@@ -67,9 +80,21 @@ class BodegaController extends Controller
      * @param  \App\Bodega  $bodega
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Bodega $bodega)
+
+    public function actualizar($id)
     {
-        //
+        $bodegas = Bodega::find($id);
+        return view('bodega.edit', ['bodega' => $bodegas]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $bodegas = Bodega::find($id);
+        $bodegas->nombre = $request->nombre;
+        $bodegas->cantidad_medicamentos = $request->cantidad_medicamentos;
+        $bodegas->save();
+        Bodega::flash('message', 'Editado Satisfactoriamente !');
+        return FacadesRedirect::to('bodega');
     }
 
     /**
@@ -78,8 +103,12 @@ class BodegaController extends Controller
      * @param  \App\Bodega  $bodega
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Bodega $bodega)
+    public function destroy($id)
     {
-        //
+        $bodegas = Bodega::find($id);
+
+        Bodega::destroy($id);
+
+        return FacadesRedirect::to('bodega');
     }
 }

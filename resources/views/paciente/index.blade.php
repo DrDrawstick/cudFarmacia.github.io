@@ -1,10 +1,10 @@
 <form action="" method="post" enctype="multipart/form-data">
-<h1>Lista de bodegas</h1>
+<h1>Lista de pacientes</h1>
 <br>
 
 <div>
     <ol>
-        lista de bodegas
+        lista de pacientes
     </ol>
 </div>
 <br>

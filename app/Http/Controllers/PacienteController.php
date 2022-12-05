@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Medicamento;
+use App\Paciente;
 use Illuminate\Http\Request;
 
-class MedicamentoController extends Controller
+class PacienteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,7 +24,7 @@ class MedicamentoController extends Controller
      */
     public function create()
     {
-        return view('medicamento.create');
+        return view('paciente.create');
     }
 
     /**
@@ -41,10 +41,10 @@ class MedicamentoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Medicamento  $medicamento
+     * @param  \App\Paciente  $paciente
      * @return \Illuminate\Http\Response
      */
-    public function show(Medicamento $medicamento)
+    public function show(Paciente $paciente)
     {
         //
     }
@@ -52,10 +52,10 @@ class MedicamentoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Medicamento  $medicamento
+     * @param  \App\Paciente  $paciente
      * @return \Illuminate\Http\Response
      */
-    public function edit(Medicamento $medicamento)
+    public function edit(Paciente $paciente)
     {
         //
     }
@@ -64,10 +64,10 @@ class MedicamentoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Medicamento  $medicamento
+     * @param  \App\Paciente  $paciente
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Medicamento $medicamento)
+    public function update(Request $request, Paciente $paciente)
     {
         //
     }
@@ -75,10 +75,10 @@ class MedicamentoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Medicamento  $medicamento
+     * @param  \App\Paciente  $paciente
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Medicamento $medicamento)
+    public function destroy(Paciente $paciente)
     {
         //
     }
