@@ -19,10 +19,10 @@ class BodegaController extends Controller
      */
     public function index()
     {
-        $bodegas = DB::select('select * from bodegas where id  = :id',['id' => 1]);
-        // $users = DB::select('select * from users where active = ?', [1]);
-        return view('bodega.create', ['bodegas' => $bodegas]);
-        //return view('user.index', ['users' => $users]);
+        /*$bodegas = DB::select('select * from bodegas where id  = :id',['id' => 1]);
+        return view('bodega.create', ['bodegas' => $bodegas]);*/
+        $bodegas = DB::table('bodegas')->get();
+        return view('index',['bodegas'=>$bodegas]);
     }
 
     /**
@@ -32,7 +32,7 @@ class BodegaController extends Controller
      */
     public function create()
     {
-        DB::insert('insert into bodegas(nombre, cantidad_medicamentos) values (?,?)')
+        DB::insert('insert into bodegas(nombre, cantidad_medicamentos) values (?,?)');
         //DB::insert('insert into users (id, name) values (?, ?)', [1, 'Dayle']);
     }
 
