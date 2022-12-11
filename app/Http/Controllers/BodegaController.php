@@ -45,6 +45,7 @@ class BodegaController extends Controller
     public function store(Request $request)
     {
         $bodegas = new Bodega();
+        //$bodegas ->id = $request->id;
         $bodegas->nombre = $request->nombre;
         $bodegas->cantidad_medicamentos = $request->cantidad_medicamentos;
         $bodegas->save();
